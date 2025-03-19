@@ -15,12 +15,8 @@
  * HINT: There is a method that can help with this.
  */
 function isArray(value) {
-    // YOUR CODE BELOW HERE //
-    return Array.isArray(array);
-    // YOUR CODE ABOVE HERE //
+    return Array.isArray(value);
 }
-
-
 
 /** 
  * Given an input value, return true if the value is an Object intended as a 
@@ -34,17 +30,14 @@ function isArray(value) {
  * 
  */
 function isObject(value) {
-    // YOUR CODE BELOW HERE //
-    
-
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
+    if (Array.isArray(value) || value === null || value instanceof Date) {
+        return false;
+    } else if (typeof value === 'object') {
+        return true;
+    } else {
+        return false;
+    }    
 }
-
-
-
 /** 
  * Given an input value, return true if is either an Array or an an Object 
  * intended as a collection, false if otherwise.
@@ -52,12 +45,13 @@ function isObject(value) {
  * TIP: Similar to isObject, but we must return true if the value is an Array.
  */
 function isCollection(value) {
-    // YOUR CODE BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
+    if (value === null || value instanceof Date) {
+        return false;
+    } else if (typeof value === 'object' || Array.isArray(value) ) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 /**
@@ -80,12 +74,15 @@ function isCollection(value) {
  *    typeOf([1,2,3]) -> "array"
  */ 
 function typeOf(value) {
-    // YOUR CODE BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE ABOVE HERE //
+    if (isArray(value)) {
+        return "array";
+    } else if (value instanceof Date) {
+        return "date";
+    } else if (value === null) {
+        return "null";
+    } else {
+        return typeof value;
+    }
 }
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
