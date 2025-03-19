@@ -16,10 +16,7 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    return Array.isArray(array);
     // YOUR CODE ABOVE HERE //
 }
 
